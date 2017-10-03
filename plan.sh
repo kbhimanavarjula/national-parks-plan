@@ -66,7 +66,7 @@ do_install()
     local source_dir="${HAB_CACHE_SRC_PATH}/${pkg_dirname}/${pkg_filename}"
     local webapps_dir="$(hab pkg path core/tomcat8)/tc/webapps"
     cp ${source_dir}/target/${pkg_filename}.war ${webapps_dir}/
-    cp ${source_dir}/target/${pkg_filename}.war src/
+    cp ${source_dir}/target/${pkg_filename}.war /src/
     # Copy our seed data so that it can be loaded into Mongo using our init hook
     cp -v ${source_dir}/national-parks.json ${PREFIX}/
 }
