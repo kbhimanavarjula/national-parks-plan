@@ -27,7 +27,7 @@ do_download()
 
     mkdir ${pkg_dirname}
     cd ${pkg_dirname}
-    GIT_SSL_NO_VERIFY=true git clone --branch v${pkg_version} https://github.com/billmeyer/national-parks.git
+    GIT_SSL_NO_VERIFY=true git clone --branch master https://github.com/kbhimanavarjula/national-parks.git
     return 0
 }
 
