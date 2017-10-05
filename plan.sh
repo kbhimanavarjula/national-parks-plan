@@ -1,7 +1,7 @@
 pkg_name=national-parks
 pkg_description="A sample JavaEE Web app deployed in the Tomcat8 package"
-pkg_origin=sysgainmsoss
-pkg_version=0.0.1
+pkg_origin=billmeyer
+pkg_version=0.0.6
 pkg_maintainer="kbhimanavarjula"
 pkg_license=('Apache-2.0')
 pkg_source=https://github.com/kbhimanavarjula/national-parks
@@ -66,7 +66,7 @@ do_install()
     local source_dir="${HAB_CACHE_SRC_PATH}/${pkg_dirname}/${pkg_filename}"
     local webapps_dir="$(hab pkg path core/tomcat8)/tc/webapps"
     cp ${source_dir}/target/${pkg_filename}.war ${webapps_dir}/
-    cp ${source_dir}/target/${pkg_filename}.war /src/
+    cp ${source_dir}/target/${pkg_filename}.war ${PREFIX}/
     # Copy our seed data so that it can be loaded into Mongo using our init hook
     cp -v ${source_dir}/national-parks.json ${PREFIX}/
 }
